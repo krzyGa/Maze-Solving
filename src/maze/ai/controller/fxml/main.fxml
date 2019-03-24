@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1550.0" style="-fx-background-color: #2b2b2b;" styleClass="cutomButton" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="maze.ai.controller.Main">
+    <children>
+        <Canvas fx:id="canvasAstar" height="700.0" layoutX="40.0" layoutY="40.0" width="700.0" />
+      <Button fx:id="btnOneStepA" layoutX="137.0" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#handleOneStepA" styleClass="cutomButton" text="Step">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnAllStepsA" layoutX="188.0" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#handleAllStepsA" styleClass="cutomButton" text="All Once">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnResetA" layoutX="260.0" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#handleResetA" styleClass="cutomButton" text="Reset Maze">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnStartSolvingA" layoutX="40.0" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#handleStartA" styleClass="cutomButton" text="Start Solving">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Canvas fx:id="canvasBfs" height="700.0" layoutX="810.0" layoutY="40.0" width="700.0" />
+      <Label alignment="CENTER" layoutX="40.0" layoutY="796.0" prefHeight="19.0" prefWidth="62.0" styleClass="customLabel" text="Status" >
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSearchStatusA" alignment="CENTER" contentDisplay="CENTER" layoutX="107.0" layoutY="796.0" prefHeight="19.0" prefWidth="250.0" styleClass="customLabel" text="Status" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTimeA" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="832.0" prefHeight="19.0" prefWidth="155.0" styleClass="customLabel" text="Time" textAlignment="RIGHT">
+           <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+     
+      <Label fx:id="lblCountA" alignment="CENTER" contentDisplay="CENTER" layoutX="202.0" layoutY="832.0" prefHeight="19.0" prefWidth="155.0" styleClass="customLabel" text="Count" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnOneStepBfs" layoutX="1301.0" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#handleOneStepBfs" styleClass="cutomButton" text="Step">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnAllStepsBfs" layoutX="1352.0" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#handleAllSteps" styleClass="cutomButton" text="All Once">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnResetBfs" layoutX="1423.0" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#handleResetGenetic" styleClass="cutomButton" text="Reset Maze">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnStartSolvingBfs" layoutX="1204.0" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#handleStartBfs" styleClass="cutomButton" text="Start Solving">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label alignment="CENTER" layoutX="1204.0" layoutY="796.0" prefHeight="19.0" prefWidth="62.0" styleClass="customLabel" text="Status"  >
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSearchStatusBfs" alignment="CENTER" contentDisplay="CENTER" layoutX="1271.0" layoutY="796.0" prefHeight="19.0" prefWidth="250.0" styleClass="customLabel" text="Status" textAlignment="RIGHT">
+           <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+        <Label fx:id="lblTimeBfs" alignment="CENTER" contentDisplay="CENTER" layoutX="1204.0" layoutY="832.0" prefHeight="19.0" prefWidth="155.0" styleClass="customLabel" text="Time" textAlignment="RIGHT">
+           <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+     
+      <Label fx:id="lblCountBfs" alignment="CENTER" contentDisplay="CENTER" layoutX="1366.0" layoutY="832.0" prefHeight="19.0" prefWidth="155.0" styleClass="customLabel" text="Count" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+    </children>
+</Pane>

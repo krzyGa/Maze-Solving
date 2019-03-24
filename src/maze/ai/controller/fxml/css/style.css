@@ -1,0 +1,35 @@
+
+.cutomButton {
+    -fx-background-color: #3c3f41;
+    -fx-border-color: #555555;
+    -fx-background-radius: 0, 0;
+    -fx-background-insets: 0, 0;
+    -fx-text-fill: #b0b0b0;
+}
+
+.cutomButton:hover {
+    -fx-background-color: #515658;
+    -fx-border-color: #555555;
+    -fx-background-radius: 0, 0;
+    -fx-background-insets: 0, 0;
+    -fx-text-fill: #000000;
+}
+
+.cutomButton:pressed {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #555555;
+    -fx-background-radius: 0, 0;
+    -fx-background-insets: 0, 0;
+    -fx-text-fill: #717171;
+}
+
+.customLabel {
+    -fx-padding: 6px;
+    -fx-border-image-insets: 6px;
+    -fx-background-insets: 6px;
+    -fx-background-color: #3c3f41;
+    -fx-border-color: #555555;
+    -fx-background-radius: 0, 0;
+    -fx-background-insets: 0, 0;
+    -fx-text-fill: #ffffff;
+}

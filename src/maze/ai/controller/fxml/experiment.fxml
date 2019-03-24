@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1550.0" style="-fx-background-color: #ffffff;" styleClass="cutomButton" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="maze.ai.controller.Experiment">
+    <children>
+        <Canvas fx:id="canvasGenetic" height="800.0" layoutX="40.0" layoutY="40.0" width="800.0" />
+        <Button fx:id="btnResetGenetic" layoutX="1159.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#handleResetGenetic" styleClass="cutomButton" text="Reset Maze">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <Button fx:id="btnStartSolvingGenetic" layoutX="1064.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#handleStartGenetic" styleClass="cutomButton" text="Start Solving">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <Label alignment="CENTER" layoutX="978.0" layoutY="536.0" prefHeight="19.0" prefWidth="98.0" styleClass="customLabel" text="Generation">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblGeneration" alignment="CENTER" contentDisplay="CENTER" layoutX="1081.0" layoutY="536.0" prefHeight="19.0" prefWidth="250.0" styleClass="customLabel" text="Status" textAlignment="RIGHT">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+      <Slider fx:id="sldPopulation" layoutX="877.0" layoutY="106.0" majorTickUnit="10.0" max="200.0" min="50.0" prefHeight="40.0" prefWidth="562.0" showTickLabels="true" showTickMarks="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Slider>
+      <Slider fx:id="sldDNA" blockIncrement="100.0" layoutX="877.0" layoutY="225.0" majorTickUnit="100.0" max="2000.0" min="200.0" prefHeight="40.0" prefWidth="562.0" showTickLabels="true" showTickMarks="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Slider>
+      <Slider fx:id="sldMutation" blockIncrement="1.0" layoutX="877.0" layoutY="343.0" majorTickUnit="5.0" minorTickCount="1" prefHeight="40.0" prefWidth="562.0" showTickLabels="true" showTickMarks="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Slider>
+      <Label alignment="CENTER" layoutX="870.0" layoutY="50.0" prefHeight="19.0" prefWidth="572.0" styleClass="customLabel" text="Population size">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="870.0" layoutY="169.0" prefHeight="19.0" prefWidth="572.0" styleClass="customLabel" text="Dna size">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="870.0" layoutY="288.0" prefHeight="19.0" prefWidth="572.0" styleClass="customLabel" text="Mutation probability">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="978.0" layoutY="576.0" prefHeight="19.0" prefWidth="98.0" styleClass="customLabel" text="DNA Step">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblStep" alignment="CENTER" contentDisplay="CENTER" layoutX="1081.0" layoutY="576.0" prefHeight="19.0" prefWidth="250.0" styleClass="customLabel" text="Status" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+    </children>
+</Pane>

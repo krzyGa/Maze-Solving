@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1550.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="maze.ai.controller.Setup">
+   <children>
+      <Button fx:id="button" layoutX="698.0" layoutY="516.0" mnemonicParsing="false" onMouseClicked="#loadSample" styleClass="cutomButton" text="Generate Maze">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Slider fx:id="slider" blockIncrement="1.0" layoutX="572.0" layoutY="451.0" majorTickUnit="5.0" max="50.0" min="5.0" prefHeight="40.0" prefWidth="356.0" showTickLabels="true" showTickMarks="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Slider>
+      <Label layoutX="710.0" layoutY="241.0" text="Maze Solver" textFill="#5a86ff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="631.0" layoutY="271.0" prefHeight="157.0" prefWidth="239.0" text="The maze will be represented as a squere. By setting the number of columns and rows,  on the next windows, the left side will be according to A* algorithm and the right side to the bfs algorithm." textAlignment="CENTER" textFill="#e1ddd8" wrapText="true" />
+   </children>
+</Pane>
