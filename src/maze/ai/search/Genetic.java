@@ -5,6 +5,7 @@ import javafx.scene.paint.Color;
 
 import maze.ai.maze.Spot;
 
+import maze.ai.search.genetic.Agent;
 import maze.ai.search.genetic.Population;
 
 // only for now
@@ -55,7 +56,6 @@ public class Genetic {
     public boolean startSolving(boolean oneStep, boolean allSteps) throws InterruptedException {
         boolean isDone = false;
         if (oneStep || allSteps) {
-
             this.drawMaze(gc, this.weightAndHeight, Color.web("0x313335"), Color.web("0xb0b0b0"));
             this.population.updatePopulation(this.countPopulation, this.grid);
             this.countPopulation++;
@@ -66,14 +66,11 @@ public class Genetic {
                 this.generationNumber++;
                 this.population.evaluate();
                 if (this.population.checkFitness().getKey()) {
-
                     this.population.drawPath(gc, weightAndHeight, Color.web("0x5a86ff"), 7, this.population.checkFitness().getValue(), true);
                     if (this.population.checkIsCompleted()) return true;
                 }
                 this.population.selection();
-
             }
-
             if (isDone) {
                 return true;
             }

@@ -17,8 +17,8 @@ import maze.ai.maze.Spot;
  *
  * @author Krzys
  */
-public class Population {
 
+public class Population {
     public Agent agent[];
     public Spot target;
 
@@ -48,7 +48,7 @@ public class Population {
     }
 
     public void evaluate() {
-        float maxFit = 0;       // in order to normalize and set the fit value bettwen (0, 1)
+        float maxFit = 0;                                               // in order to normalize and set the fit value beettwen (0, 1)
         for (int i = 0; i < this.populationSize; i++) {
             this.agent[i].calcuateFitness(this.target);
             if (this.agent[i].fitness > maxFit) {
@@ -56,13 +56,13 @@ public class Population {
             }
         }
 
-        this.matingPool.clear();        // in order to create new population
+        this.matingPool.clear();                                        // in order to create new population
         for (int i = 0; i < this.populationSize; i++) {
-            this.agent[i].fitness /= maxFit;  // in order to normalize and set the fit value bettwen (0, 1)
+            this.agent[i].fitness /= maxFit;                            // in order to normalize and set the fit value bettwen (0, 1)
             System.out.print(this.agent[i].fitness + "\n");
         }
 
-        for (int i = 0; i < this.populationSize; i++) {       // possibility 
+        for (int i = 0; i < this.populationSize; i++) {                 // possibility
             float temp = this.agent[i].fitness * 100;
             for (int j = 0; j < (int) temp; j++) {
                 this.matingPool.add(this.agent[i]);
@@ -72,16 +72,15 @@ public class Population {
 
     public Pair<Boolean, Integer> checkFitness() {
         for (int i = 0; i < this.populationSize; i++) {
-            if (this.agent[i].fitness == 1) {
+            if (this.agent[i].fitness == 1 || this.agent[i].isCompleted) {
                 return new Pair<Boolean, Integer>(true, i);
             }
         }
         return new Pair<Boolean, Integer>(false, 0);
-
     }
 
     public void selection() {
-        Agent newAgents[] = new Agent[this.populationSize];
+        Agent[] newAgents = new Agent[this.populationSize];
 
         for (int i = 0; i < this.agent.length; i++) {
             Random generatorA = new Random();
@@ -108,18 +107,14 @@ public class Population {
     public void drawPath(GraphicsContext gc, float wAh, Color color, int wAhOfTile, int agentNumber, boolean onePath) throws InterruptedException {
         if (onePath) {
              this.agent[agentNumber].drawPath(gc, wAh, color, wAhOfTile);
-
-            //Thread.sleep(3000);
-            //TimeUnit.SECONDS.sleep(2);
         } else {
             for (int i = 0; i < this.populationSize; i++) {
                 this.agent[i].drawPath(gc, wAh, color, wAhOfTile);
             }
         }
-
     }
 
-    public void updatePopulation(int countPopulation, Spot grid[][]) {
+    public void updatePopulation(int countPopulation, Spot[][] grid) {
         for (int i = 0; i < this.populationSize; i++) {
             this.agent[i].update(countPopulation, this.target, grid);
         }
@@ -128,7 +123,10 @@ public class Population {
     public boolean checkIsCompleted(){
         boolean returnedValue = false;
         for (int i = 0; i < this.populationSize; i++) {
-            if(this.agent[i].isCompleted) returnedValue = true;
+            if (this.agent[i].isCompleted) {
+                returnedValue = true;
+                break;
+            }
         }
         return  returnedValue;
     }

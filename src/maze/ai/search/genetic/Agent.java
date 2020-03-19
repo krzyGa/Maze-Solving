@@ -6,11 +6,14 @@
 package maze.ai.search.genetic;
 
 import static java.lang.Math.abs;
+
+import java.awt.*;
 import java.util.List;
 import java.util.Vector;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import maze.ai.maze.Spot;
+import javafx.scene.text.Font;
 
 /**
  *
@@ -52,8 +55,10 @@ public class Agent {
     public void draw(GraphicsContext gc, int spotNumber, float wAh, Color elipseColor, int wAhOfTile) {
         gc.setFill(elipseColor);
         gc.fillOval(wAh * this.spot.x + (wAh / 2) - (wAhOfTile / 2), wAh * this.spot.y + (wAh / 2) - (wAhOfTile / 2), wAhOfTile, wAhOfTile);
-        gc.fillText(toString().valueOf(spotNumber), wAh * this.spot.x + 5, wAh * this.spot.y + (wAh - 10));
-
+        gc.setFont(new Font("Courier New", 10));
+        if(this.rows < 30) {
+            gc.fillText(toString().valueOf(spotNumber), wAh * this.spot.x + 5, wAh * this.spot.y + (wAh - 10));
+        }
     }
 
     public void drawPath(GraphicsContext gc, float wAh, Color color, int wAhOfTile) {
@@ -70,12 +75,8 @@ public class Agent {
         }
     }
 
-    public void update(int countPopulation, Spot target, Spot grid[][]) {
-
-        float distance = abs(this.spot.x - target.x) + abs(this.spot.y - target.y);
-
-        if (distance < 4) {
-        //if(this.spot.x == target.x && this.spot.y == target.y) {
+    public void update(int countPopulation, Spot target, Spot[][] grid) {
+        if(this.spot.x == target.x && this.spot.y == target.y) {
             this.isCompleted = true;
         }
 
@@ -118,22 +119,9 @@ public class Agent {
             }
         }
     }
-   
-    
 
     public void calcuateFitness(Spot target) {
         float distance = abs(this.spot.x - target.x) + abs(this.spot.y - target.y);
         this.fitness = 1 / distance;
-
-//        float up = (this.spot.x + this.spot.y);
-//        float down = (target.x + target.y) - (this.spot.x + this.spot.y);
-//        float fv = up / down;
-//        fv = fv * 100;
-//        
-//        this.fitness = fv;
-
-        if (this.isCompleted) {
-        //    this.fitness *= 10;
-        }
     }
 }
